@@ -17,9 +17,7 @@ We implement several mutual information estimators, including:
 - MINE / DV: Variational representation of the KL divergence based on Donsker-Varadhan inequality.
 - SMILE: our method with clipping 
 
-$$
-I_{\mathrm{SMILE}}(T_\theta, \tau) := \mathbb{E}_P[T_\theta(\vx, \vy)] - \log \mathbb{E}_Q[\mathrm{clip}(e^{T_\theta(\vx, \vy)}, e^{-\tau}, e^{\tau})] 
-$$
+![](smile.jpg)
 
 These functions are implemented in `estimators.py`.
 
