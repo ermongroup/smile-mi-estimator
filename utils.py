@@ -16,17 +16,17 @@ def sample_correlated_gaussian(rho=0.5, dim=20, batch_size=128, cubic=None):
 
 def rho_to_mi(dim, rho):
     """Obtain the ground truth mutual information from rho."""
-    return -0.5 * np.log(1-rho**2) * dim
+    return -0.5 * np.log(1 - rho**2) * dim
 
 
 def mi_to_rho(dim, mi):
     """Obtain the rho for Gaussian give ground truth mutual information."""
-    return np.sqrt(1-np.exp(-2.0 / dim * mi))
+    return np.sqrt(1 - np.exp(-2.0 / dim * mi))
 
 
 def mi_schedule(n_iter):
     """Generate schedule for increasing correlation over time."""
-    mis = np.round(np.linspace(0.5, 5.5-1e-9, n_iter)) * 2.0
+    mis = np.round(np.linspace(0.5, 5.5 - 1e-9, n_iter)) * 2.0
     return mis.astype(np.float32)
 
 
@@ -46,6 +46,7 @@ def mlp(dim, hidden_dim, output_dim, layers, activation):
 
 class SeparableCritic(nn.Module):
     """Separable critic. where the output value is g(x) h(y). """
+
     def __init__(self, dim, hidden_dim, embed_dim, layers, activation, **extra_kwargs):
         super(SeparableCritic, self).__init__()
         self._g = mlp(dim, hidden_dim, embed_dim, layers, activation)
@@ -58,6 +59,7 @@ class SeparableCritic(nn.Module):
 
 class ConcatCritic(nn.Module):
     """Concat critic, where we concat the inputs and use one MLP to output the value."""
+
     def __init__(self, dim, hidden_dim, layers, activation, **extra_kwargs):
         super(ConcatCritic, self).__init__()
         # output is scalar score

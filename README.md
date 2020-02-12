@@ -12,14 +12,14 @@ The code depends on PyTorch >= 1.2, numpy, pandas and matplotlib. It has been te
 
 We implement several mutual information estimators, including:
 - InfoNCE: Contrastive predictive coding / Info Noise Contrastive Estimation.
-![](infonce.jpg)
+![](figures/infonce.jpg)
 - NWJ: Variational representation of the KL divergence (lower bound).
-![](nwj.jpg)
+![](figures/nwj.jpg)
 - NWJ (JS): Train with variational representation of JS divergence lower bound, evaluate with KL.
 - MINE / DV: Variational representation of the KL divergence based on Donsker-Varadhan inequality.
-![](dv.jpg)
+![](figures/dv.jpg)
 - SMILE: our method with clipping for estimating partition functions.
-![](smile.jpg)
+![](figures/smile.jpg)
 
 These functions are implemented in `estimators.py`.
 
