@@ -1,6 +1,6 @@
 # Smoothed Mutual Information ``Lower Bound'' Estimator
 
-PyTorch implementation for the paper [Understanding the Limitations of Variational Mutual Information Estimators](https://arxiv.org/abs/1910.06222), ICLR 2020.
+PyTorch implementation for the ICLR 2020 paper [Understanding the Limitations of Variational Mutual Information Estimators](https://arxiv.org/abs/1910.06222).
 
 by Jiaming Song and Stefano Ermon, Stanford Artificial Intelligence Laboratory.
 
